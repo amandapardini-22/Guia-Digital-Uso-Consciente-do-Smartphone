@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia Digital: Uso Consciente do Smartphone</title>
+  <style>
+    :root {
+      --azul: #2563EB;
+      --azul-escuro: #1D4ED8;
+      --verde: #22C55E;
+      --amarelo: #FACC15;
+      --lilas: #8B5CF6;
+      --fundo: #F8FAFC;
+      --texto: #1E293B;
+      --texto-suave: #64748B;
+      --branco: #FFFFFF;
+      --borda: #E2E8F0;
+      --azul-claro: #DBEAFE;
+      --verde-claro: #DCFCE7;
+      --amarelo-claro: #FEF9C3;
+      --lilas-claro: #EDE9FE;
+      --sombra: 0 18px 45px rgba(15, 23, 42, 0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--fundo);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+    a { color: inherit; }
+    .page { overflow: hidden; }
+
+    .hero {
+      min-height: 88vh;
+      padding: 56px 24px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at top left, rgba(250, 204, 21, 0.35), transparent 28%),
+        radial-gradient(circle at 80% 20%, rgba(34, 197, 94, 0.28), transparent 28%),
+        linear-gradient(135deg, #2563EB 0%, #8B5CF6 100%);
+      color: var(--branco);
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 360px;
+      height: 360px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.10);
+      right: -120px;
+      bottom: -120px;
+    }
+
+    .container {
+      width: min(1120px, 100%);
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 0.8fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.16);
+      border: 1px solid rgba(255, 255, 255, 0.30);
+      font-size: 0.78rem;
+      font-weight: 700;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 7vw, 5rem);
+      line-height: 1.05;
+      letter-spacing: -0.05em;
+      margin-bottom: 22px;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2vw, 1.28rem);
+      max-width: 720px;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: 12px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid transparent;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 12px 28px rgba(15, 23, 42, 0.18); }
+    .btn-primary { background: var(--branco); color: var(--azul-escuro); }
+    .btn-outline { border-color: rgba(255, 255, 255, 0.70); color: var(--branco); background: rgba(255, 255, 255, 0.10); }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.14);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      border-radius: 34px;
+      padding: 28px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--sombra);
+    }
+
+    .hero-card h2 { font-size: 1.4rem; margin-bottom: 16px; }
+    .hero-card ul { list-style: none; display: grid; gap: 12px; }
+    .hero-card li {
+      background: rgba(255, 255, 255, 0.16);
+      border-radius: 18px;
+      padding: 12px 14px;
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      font-weight: 650;
+    }
+
+    section { padding: 76px 24px; }
+
+    .section-title {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 42px;
+    }
+
+    .section-title .eyebrow {
+      color: var(--azul);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.82rem;
+      margin-bottom: 8px;
+    }
+
+    .section-title h2 {
+      font-size: clamp(1.8rem, 4vw, 3rem);
+      letter-spacing: -0.04em;
+      margin-bottom: 14px;
+    }
+
+    .section-title p { color: var(--texto-suave); font-size: 1.05rem; }
+
+
+    .project-context {
+      background: linear-gradient(135deg, #FFFFFF, var(--azul-claro));
+      border: 1px solid var(--borda);
+      border-radius: 34px;
+      padding: 32px;
+      box-shadow: var(--sombra);
+      max-width: 980px;
+      margin: 32px auto 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .project-context::before {
+      content: "";
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      background: rgba(139, 92, 246, 0.14);
+      right: -40px;
+      top: -40px;
+    }
+
+    .project-context h3 {
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+      color: var(--azul-escuro);
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-context p {
+      color: var(--texto);
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .project-context strong {
+      color: var(--azul-escuro);
+    }
+
+    .intro-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-left: 8px solid var(--azul);
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: var(--sombra);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 32px;
+    }
+
+    .mini-card {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+      min-height: 160px;
+    }
+
+    .mini-card .icon, .feature .icon {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      font-size: 1.6rem;
+      margin-bottom: 14px;
+      background: rgba(255,255,255,0.55);
+    }
+
+    .mini-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .mini-card p { color: var(--texto-suave); font-size: 0.94rem; }
+
+    .bg-azul { background: var(--azul-claro); }
+    .bg-verde { background: var(--verde-claro); }
+    .bg-amarelo { background: var(--amarelo-claro); }
+    .bg-lilas { background: var(--lilas-claro); }
+
+    .alert {
+      background: linear-gradient(135deg, #FEF9C3, #FFFFFF);
+      border: 2px solid #FACC15;
+      border-radius: 28px;
+      padding: 26px;
+      box-shadow: var(--sombra);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .alert h3 { font-size: 1.5rem; margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
+    .alert ul { margin: 14px 0 0 22px; }
+
+    .video-wrap {
+      background: linear-gradient(135deg, var(--azul-claro), var(--lilas-claro));
+      border-radius: 36px;
+      padding: 28px;
+      box-shadow: var(--sombra);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .video-box {
+      background: #0F172A;
+      color: var(--branco);
+      border-radius: 26px;
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 34px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .video-box .play {
+      width: 86px;
+      height: 86px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--branco);
+      color: var(--azul);
+      font-size: 2.2rem;
+      margin: 0 auto 16px;
+    }
+
+    .video-box p { color: rgba(255,255,255,0.84); max-width: 620px; }
+
+    .steps { display: grid; gap: 34px; margin-top: 34px; }
+
+    .step {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 26px;
+      align-items: center;
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 34px;
+      padding: 24px;
+      box-shadow: 0 16px 35px rgba(15, 23, 42, 0.07);
+    }
+
+    .step:nth-child(even) .step-text { order: 2; }
+    .step:nth-child(even) .image-placeholder { order: 1; }
+
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      color: var(--azul);
+      background: var(--azul-claro);
+      border-radius: 999px;
+      padding: 8px 14px;
+      margin-bottom: 14px;
+      font-size: 0.92rem;
+    }
+
+    .step h3 {
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin-bottom: 14px;
+    }
+
+    .step p { color: var(--texto-suave); margin-bottom: 14px; }
+    .step ol, .step ul { padding-left: 20px; color: var(--texto); }
+    .step li { margin-bottom: 8px; }
+
+
+    .step-image {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 24px;
+      display: block;
+      background: #FFFFFF;
+    }
+
+    .image-caption {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: var(--texto-suave);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .image-placeholder {
+      min-height: 330px;
+      border-radius: 28px;
+      border: 2px dashed #CBD5E1;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08), rgba(139, 92, 246, 0.08)), #FFFFFF;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 24px;
+      color: var(--texto-suave);
+    }
+
+    .image-placeholder strong { color: var(--texto); display: block; font-size: 1.1rem; margin-bottom: 8px; }
+
+    .tip {
+      background: #F1F5F9;
+      border-radius: 18px;
+      padding: 14px;
+      font-size: 0.95rem;
+      color: var(--texto);
+      margin-top: 14px;
+      border-left: 5px solid var(--verde);
+    }
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .feature {
+      border-radius: 28px;
+      padding: 24px;
+      min-height: 210px;
+      border: 1px solid var(--borda);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+    }
+
+    .feature h3 { margin: 12px 0 8px; font-size: 1.2rem; }
+    .feature p { color: var(--texto-suave); }
+
+    .family-box {
+      background: linear-gradient(135deg, var(--verde-claro), #FFFFFF);
+      border: 1px solid #BBF7D0;
+      border-radius: 34px;
+      padding: 32px;
+      box-shadow: var(--sombra);
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .family-box ul { margin-top: 18px; padding-left: 24px; }
+    .family-box li { margin-bottom: 10px; }
+
+    .faq { max-width: 980px; margin: 0 auto; display: grid; gap: 14px; }
+
+    details {
+      background: var(--branco);
+      border: 1px solid var(--borda);
+      border-radius: 20px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.05);
+    }
+
+    summary { cursor: pointer; font-weight: 900; color: var(--texto); }
+    details p { margin-top: 12px; color: var(--texto-suave); }
+
+    .sources { background: #0F172A; color: var(--branco); }
+    .sources .section-title .eyebrow { color: var(--amarelo); }
+    .sources .section-title p { color: rgba(255,255,255,0.72); }
+
+    .sources-list {
+      max-width: 980px;
+      margin: 0 auto;
+      display: grid;
+      gap: 12px;
+      list-style: none;
+    }
+
+    .sources-list li {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 18px;
+      padding: 14px 16px;
+      word-break: break-word;
+    }
+
+    .sources-list a { color: #BFDBFE; }
+
+    footer {
+      padding: 26px 24px;
+      text-align: center;
+      background: #020617;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .print-button {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 5;
+      background: var(--azul);
+      color: var(--branco);
+      border: none;
+      border-radius: 999px;
+      padding: 14px 18px;
+      font-weight: 900;
+      box-shadow: var(--sombra);
+      cursor: pointer;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid, .step { grid-template-columns: 1fr; }
+      .step:nth-child(even) .step-text, .step:nth-child(even) .image-placeholder { order: initial; }
+      .cards-grid, .features-grid { grid-template-columns: repeat(2, 1fr); }
+      .hero { min-height: auto; }
+    }
+
+    @media (max-width: 560px) {
+      section { padding: 56px 18px; }
+      .hero { padding: 48px 18px; }
+      .cards-grid, .features-grid { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; }
+      .video-box { min-height: 260px; }
+  
+    .step-image {
+      width: 100%;
+      max-height: 520px;
+      object-fit: contain;
+      border-radius: 24px;
+      display: block;
+      background: #FFFFFF;
+    }
+
+    .image-caption {
+      margin-top: 12px;
+      font-size: 0.92rem;
+      color: var(--texto-suave);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .image-placeholder { min-height: 240px; }
+      .print-button { display: none; }
+    }
+
+    @media print {
+      .hero-actions, .print-button { display: none; }
+      .hero { min-height: auto; color: #000; background: #fff; }
+      section { padding: 28px 0; }
+      .step, .intro-card, .alert, .video-wrap, .mini-card, .feature, .family-box, details { box-shadow: none; }
+      .sources, footer { background: #fff; color: #000; }
+      .sources-list li { background: #fff; color: #000; border: 1px solid #ddd; }
+    }
+
+    /* Ajuste visual para os prints do passo a passo */
+    .image-placeholder {
+      min-height: auto !important;
+      padding: 18px !important;
+      border: 1px solid var(--borda) !important;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 32%),
+        linear-gradient(135deg, #F8FAFC, #FFFFFF) !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow: hidden !important;
+    }
+
+    .image-placeholder > div {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .step-image {
+      width: auto !important;
+      max-width: min(100%, 310px) !important;
+      max-height: 560px !important;
+      height: auto !important;
+      object-fit: contain !important;
+      border-radius: 26px !important;
+      display: block !important;
+      background: #FFFFFF !important;
+      border: 10px solid #0F172A !important;
+      box-shadow: 0 18px 38px rgba(15, 23, 42, 0.18) !important;
+      margin: 0 auto !important;
+    }
+
+    .image-caption {
+      margin-top: 4px !important;
+      font-size: 0.9rem !important;
+      color: var(--texto-suave) !important;
+      text-align: center !important;
+      font-weight: 700 !important;
+      max-width: 320px;
+    }
+
+.video-embed {
+  padding: 0;
+  min-height: auto;
+  aspect-ratio: 16 / 9;
+}
+
+.video-embed iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 26px;
+  display: block;
+}
+
+    @media (max-width: 900px) {
+      .step-image {
+        max-width: min(100%, 290px) !important;
+        max-height: 520px !important;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .image-placeholder {
+        padding: 14px !important;
+      }
+
+      .step-image {
+        max-width: min(100%, 250px) !important;
+        max-height: 470px !important;
+        border-width: 8px !important;
+        border-radius: 22px !important;
+      }
+
+      .image-caption {
+        font-size: 0.84rem !important;
+      }
+    }
+
+
+    .step a {
+      color: var(--azul-escuro);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .step a:hover {
+      color: var(--lilas);
+    }
+
+  </style>
+</head>
+
+<body>
+  <button class="print-button" onclick="window.print()">Imprimir / PDF</button>
+
+  <main class="page">
+    <header class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="badge">📚 Projeto de Extensão • Cultura e Desenvolvimento Social</div>
+          <h1>Guia Digital: Uso Consciente do Smartphone</h1>
+          <p>
+            Passo a passo para pais e responsáveis configurarem o Google Family Link
+            como ferramenta de apoio ao uso consciente do celular por crianças e adolescentes.
+          </p>
+          <div class="hero-actions">
+            <a href="#video" class="btn btn-primary">Assistir orientação</a>
+            <a href="#passo-a-passo" class="btn btn-outline">Ver passo a passo</a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h2>O que você encontrará aqui?</h2>
+          <ul>
+            <li>✅ Como criar ou supervisionar a conta da criança/adolescente</li>
+            <li>✅ Como configurar a supervisão pelo Family Link</li>
+            <li>✅ Como definir limites, horários e aplicativos</li>
+            <li>✅ Dicas de diálogo e combinados familiares</li>
+          </ul>
+        </aside>
+      </div>
+    </header>
+
+    <section id="apresentacao">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Apresentação</div>
+          <h2>Orientação simples para uma rotina digital mais equilibrada</h2>
+          <p>
+            Material de apoio para orientar pais e responsáveis sobre o uso consciente do celular por crianças e adolescentes.
+          </p>
+        </div>
+
+        <div class="intro-card">
+          <p>
+            Este material foi desenvolvido com o objetivo de orientar pais e responsáveis sobre o uso consciente
+            do smartphone por crianças e adolescentes. A proposta surgiu a partir de reclamações e preocupações
+            observadas no âmbito escolar, especialmente diante dos impactos que o uso excessivo do celular pode
+            causar na aprendizagem, na concentração, no sono, na convivência e no rendimento escolar.
+          </p>
+          <br />
+          <p>
+            O Google Family Link é uma ferramenta gratuita de controle parental que permite
+            acompanhar o uso do smartphone, definir limites de tempo de tela, aprovar ou bloquear
+            aplicativos e configurar regras para uma experiência digital mais segura.
+          </p>
+          <br />
+          <p>
+            A ferramenta não substitui o diálogo familiar nem as orientações educativas sobre o uso consciente
+            do celular. Ela funciona melhor quando utilizada junto com combinados claros, orientação dos
+            responsáveis e apoio das escolas e dos centros educacionais.
+          </p>
+        </div>
+
+        <div class="project-context">
+          <h3>Por que este guia foi criado?</h3>
+          <p>
+            Este guia foi desenvolvido como parte do projeto <strong>“Guia Digital para Uso Consciente do Smartphone”</strong>,
+            com foco na orientação de pais e responsáveis de crianças e adolescentes em idade escolar.
+          </p>
+          <p>
+            A ideia do projeto surgiu a partir de reclamações e preocupações observadas no contexto escolar,
+            bem como das discussões relacionadas à proibição do uso de celulares nas escolas. O uso inadequado
+            e excessivo do smartphone pode prejudicar a concentração, a participação nas atividades, a convivência,
+            o sono e o rendimento escolar de crianças e adolescentes.
+          </p>
+          <p>
+            Diante dessa realidade, este material busca apoiar diretamente pais e responsáveis, apresentando o
+            <strong>Google Family Link</strong> como uma ferramenta de apoio para o acompanhamento do uso do celular.
+            A proposta é auxiliar na criação de limites, combinados familiares e hábitos digitais mais saudáveis,
+            contribuindo para uma relação mais equilibrada com a tecnologia e fortalecendo o apoio das famílias,
+            escolas e centros educacionais no processo de orientação.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section id="antes">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Antes de começar</div>
+          <h2>Tenha tudo em mãos</h2>
+          <p>Separe os itens abaixo para realizar a configuração com mais tranquilidade.</p>
+        </div>
+
+        <div class="cards-grid">
+          <div class="mini-card">
+            <div class="icon bg-azul">📱</div>
+            <h3>Celular do responsável</h3>
+            <p>Será usado para instalar e acessar o Google Family Link.</p>
+          </div>
+
+          <div class="mini-card">
+            <div class="icon bg-verde">👧</div>
+            <h3>Celular da criança/adolescente</h3>
+            <p>É o aparelho que será supervisionado pelo responsável.</p>
+          </div>
+
+          <div class="mini-card">
+            <div class="icon bg-amarelo">✉️</div>
+            <h3>Conta Google/Gmail</h3>
+            <p>O responsável precisa ter uma Conta Google, e a conta da criança/adolescente deve ser criada ou supervisionada conforme a idade e a situação da conta.</p>
+          </div>
+
+          <div class="mini-card">
+            <div class="icon bg-lilas">🌐</div>
+            <h3>Internet nos aparelhos</h3>
+            <p>Os dois celulares precisam estar conectados durante a configuração.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="alerta">
+      <div class="container">
+        <div class="alert">
+          <h3>⚠️ Atenção importante</h3>
+          <p>
+            Antes de configurar a supervisão no celular da criança ou adolescente,
+            verifique se já existem outras Contas Google cadastradas no aparelho.
+          </p>
+          <ul>
+            <li>O ideal é manter apenas a conta que será supervisionada.</li>
+            <li>Contas antigas, contas de adultos ou contas não supervisionadas devem ser removidas do aparelho.</li>
+            <li>Remover a conta do celular não significa excluir a conta do Google; apenas retira o acesso naquele dispositivo.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+<section id="video">
+  <div class="container">
+    <div class="section-title">
+      <div class="eyebrow">Vídeo explicativo</div>
+      <h2>Assista antes de começar</h2>
+      <p>
+        Assista ao vídeo para acompanhar, de forma prática,
+        as principais etapas de configuração do Google Family Link.
+      </p>
+    </div>
+
+    <div class="video-wrap">
+      <div class="video-box">
+        <div>
+          <div class="play">▶</div>
+          <h3>Vídeo de orientação para pais e responsáveis</h3>
+          <p>
+            Este vídeo apresenta orientações práticas sobre o uso do Google Family Link
+            como ferramenta de apoio para pais e responsáveis acompanharem o uso do celular por crianças e adolescentes.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="https://youtu.be/z4qyYabo4GE?si=-7H7BHcDQiYNsFbU"
+            target="_blank"
+            rel="noopener"
+            style="margin-top: 18px;"
+          >
+            Assistir vídeo no YouTube
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <section id="passo-a-passo">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Passo a passo ilustrado</div>
+          <h2>Configure o Family Link em etapas</h2>
+          <p>
+              Siga as etapas abaixo para criar ou supervisionar a conta da criança/adolescente, configurar a supervisão e definir limites de uso pelo Google Family Link.
+          </p>
+        </div>
+
+        <div class="steps">
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 1</span>
+              <h3>Criar ou supervisionar uma Conta Google da criança/adolescente</h3>
+              <p>O primeiro passo é verificar se a criança ou adolescente já possui uma Conta Google. Dependendo da idade e da situação da conta, será possível criar uma nova conta infantil ou ativar a supervisão em uma conta existente.</p>
+              <ol>
+                <li>
+                  Se a criança for menor de 13 anos, ou menor que a idade mínima aplicável no país, o responsável poderá criar uma Conta Google para ela e gerenciá-la pelo Family Link.
+                </li>
+                <li>
+                  Se a criança ou adolescente já tiver uma Conta Google, pode ser possível ativar a supervisão nessa conta existente.
+                </li>
+                <li>
+                  Para criar uma conta infantil, acesse <a href="https://accounts.google.com/signup" target="_blank" rel="noopener"><strong>accounts.google.com/signup</strong></a>.
+                </li>
+                <li>Insira as informações solicitadas, como nome e data de nascimento.</li>
+                <li>Siga as instruções para configurar a supervisão e leia os Termos e Condições apresentados.</li>
+              </ol>
+              <div class="tip">Atenção: adolescentes acima da idade mínima podem criar a própria Conta Google. Nesses casos, o caminho mais adequado pode ser ativar a supervisão em uma conta já existente, em vez de criar uma nova conta infantil.</div>
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="conta-google.jpeg" alt="Tela de criação da Conta Google/Gmail">
+                <p class="image-caption">Tela de criação ou supervisão da Conta Google</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 2</span>
+              <h3>Instalar o Google Family Link no celular do responsável</h3>
+              <p>O aplicativo será usado pelo responsável para acompanhar e configurar os limites.</p>
+              <ol>
+                <li>Abra a Play Store ou App Store.</li>
+                <li>
+                  Pesquise por <strong>Google Family Link</strong>.
+                  <br> Você também pode acessar:
+                  <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.kids.familylink&hl=pt_BR" target="_blank" rel="noopener"><strong>Play Store</strong></a>
+                  ou
+                  <a href="https://apps.apple.com/br/app/google-family-link/id1150085200" target="_blank" rel="noopener"><strong>App Store</strong></a>.
+                </li>
+                <li>Toque em instalar ou obter.</li>
+                <li>Abra o aplicativo.</li>
+                <li>Faça login com a Conta Google do responsável.</li>
+              </ol>
+              <div class="tip">
+                Observação: o Family Link pode ser instalado no iPhone do responsável. Porém, para supervisionar o aparelho da criança/adolescente, os recursos funcionam de forma mais completa em celulares Android e Chromebooks. Em iPhone/iPad da criança, algumas funções podem ser limitadas.
+              </div>
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="family-link.jpeg" alt="Aplicativo Google Family Link na loja de aplicativos">
+                <p class="image-caption">Aplicativo Google Family Link na loja de aplicativos</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 3</span>
+              <h3>Vincular a conta da criança/adolescente ao responsável</h3>
+              <p>Depois de abrir o aplicativo, adicione a conta que será supervisionada.</p>
+              <ol>
+                <li>Toque na opção para adicionar ou supervisionar uma criança/adolescente.</li>
+                <li>Informe a Conta Google da criança/adolescente.</li>
+                <li>Confirme que você é o responsável.</li>
+                <li>Siga as instruções exibidas pelo aplicativo.</li>
+                <li>Conclua o vínculo entre as contas.</li>
+              </ol>
+              <div class="tip">Em alguns casos, a confirmação será solicitada também no celular da criança/adolescente.</div>
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="adiciona-conta.jpeg" alt="Tela para adicionar ou supervisionar uma conta">
+                <p class="image-caption">Tela para adicionar ou supervisionar uma conta</p>
+              </div></div>
+          
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 4</span>
+              <h3>Remover outras contas do celular da criança/adolescente</h3>
+              <p>Essa etapa evita falhas na supervisão e reduz a possibilidade de uso fora do controle parental.</p>
+              <ol>
+                <li>No celular da criança/adolescente, abra <strong>Configurações</strong>.</li>
+                <li>Procure <strong>Contas</strong>, <strong>Usuários e contas</strong>, <strong>Senhas e contas</strong> ou <strong>Google</strong>.</li>
+                <li>Verifique quais Contas Google estão cadastradas.</li>
+                <li>Selecione a conta que não será supervisionada.</li>
+                <li>Toque em <strong>Remover conta</strong>.</li>
+              </ol>
+              <div class="tip">Remover a conta do aparelho não exclui a conta Google. Apenas remove o acesso naquele celular.</div>
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="remover-conta2.jpeg" alt="Tela de contas cadastradas no aparelho">
+                <p class="image-caption">Tela de contas cadastradas no aparelho</p>
+              </div></div>
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 5</span>
+              <h3>Adicionar a conta supervisionada no celular da criança/adolescente</h3>
+              <p>Após remover contas que não serão utilizadas, adicione apenas a conta supervisionada.</p>
+              <ol>
+                <li>Acesse <strong>Configurações</strong>.</li>
+                <li>Toque em <strong>Adicionar conta</strong>.</li>
+                <li>Escolha <strong>Google</strong>.</li>
+                <li>Digite o e-mail da criança/adolescente.</li>
+                <li>Informe a senha.</li>
+                <li>Aceite a solicitação de supervisão e conclua o processo.</li>
+              </ol>
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="adiciona-conta-supervisionada.jpeg" alt="Adicionar Conta Google supervisionada">
+                <p class="image-caption">Adicionar Conta Google supervisionada</p>
+              </div></div>
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 6</span>
+              <h3>Confirmar a supervisão no aparelho</h3>
+              <p>Em alguns dispositivos, o próprio celular da criança/adolescente solicitará confirmação.</p>
+              <ol>
+                <li>Siga as mensagens exibidas na tela.</li>
+                <li>Confirme que a conta será supervisionada.</li>
+                <li>Faça login com a conta do responsável, se solicitado.</li>
+                <li>Leia as informações apresentadas.</li>
+                <li>Conclua a ativação da supervisão.</li>
+              </ol>
+              <div class="tip">Explique que a configuração é uma forma de cuidado e organização, não uma punição.</div>
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="tempo-de-tela.jpeg" alt="Confirmar a supervisão no aparelho">
+                <p class="image-caption">Confirmar a supervisão no aparelho</p>
+              </div></div>            
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 7</span>
+              <h3>Configurar limites de tempo de tela</h3>
+              <p>Defina quanto tempo o celular poderá ser usado em cada dia.</p>
+              <ol>
+                <li>No celular do responsável, abra o Family Link.</li>
+                <li>Selecione o perfil da criança/adolescente.</li>
+                <li>Toque em <strong>Tempo de tela</strong>.</li>
+                <li>Selecione <strong>Limites de tempo</strong>.</li>
+                <li>Escolha os dias e defina o tempo máximo de uso.</li>
+                <li>Salve as alterações.</li>
+              </ol>
+            </div>
+            <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="tempo-tela.jpeg" alt="Configuração de tempo de tela">
+                <p class="image-caption">Configuração de tempo de tela</p>
+              </div></div>  
+            </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 8</span>
+              <h3>Configurar o horário escolar</h3>
+              <p>O horário escolar bloqueia o celular em períodos de estudo ou horário escolar.</p>
+              <ol>
+                <li>Abra o Family Link.</li>
+                <li>Selecione o perfil da criança/adolescente.</li>
+                <li>Toque em <strong>Tempo de tela</strong>.</li>
+                <li>Procure <strong>Horário escolar</strong>.</li>
+                <li>Defina início, término e dias da semana.</li>
+                <li>Salve a configuração.</li>
+              </ol>
+            </div>
+                      <div class="image-placeholder">
+              <div>
+                <img class="step-image" src="tempo-escolar.jpeg" alt="Configuração de horário escolar">
+                <p class="image-caption">Configuração de horário escolar</p>
+              </div></div>   
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 9</span>
+              <h3>Aprovar ou bloquear aplicativos</h3>
+              <p>Escolha quais aplicativos poderão ser usados e quais deverão ser bloqueados.</p>
+              <ol>
+                <li>Abra o Family Link.</li>
+                <li>Selecione o perfil da criança/adolescente.</li>
+                <li>Toque em <strong>Controles</strong>.</li>
+                <li>Acesse a área de aplicativos ou Google Play.</li>
+                <li>Veja os aplicativos instalados.</li>
+                <li>Permita ou bloqueie os aplicativos conforme os combinados da família.</li>
+              </ol>
+            </div>
+              <div>
+            <div class="image-placeholder"><div>
+                <img class="step-image" src="permitidos-bloqueados.jpeg" alt="Aprovar ou bloquear aplicativos">
+                <p class="image-caption">Aprovar ou bloquear aplicativos</p>
+              </div>
+            </div>              
+          </article>
+
+          <article class="step">
+            <div class="step-text">
+              <span class="step-number">Etapa 10</span>
+              <h3>Configurar filtros e restrições de conteúdo</h3>
+              <p>Reduza o acesso a conteúdos inadequados conforme a idade da criança/adolescente.</p>
+              <ol>
+                <li>Abra o Family Link.</li>
+                <li>Selecione o perfil supervisionado.</li>
+                <li>Toque em <strong>Controles</strong>.</li>
+                <li>Acesse <strong>Google Play</strong>.</li>
+                <li>Configure restrições para apps, jogos, filmes, livros e conteúdos pagos.</li>
+                <li>Revise também YouTube, YouTube Kids e Pesquisa Google, se necessário.</li>
+              </ol>
+            </div>
+                          <div>
+            <div class="image-placeholder"><div>
+                <img class="step-image" src="controles.jpeg" alt="Restrições de conteúdo e segurança">
+                <p class="image-caption">Restrições de conteúdo e segurança</p>
+              </div>
+            </div>    
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="configuracoes">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Configurações principais</div>
+          <h2>Recursos que ajudam no acompanhamento</h2>
+          <p>Depois da configuração inicial, estes são os recursos mais importantes para a rotina familiar.</p>
+        </div>
+
+        <div class="features-grid">
+          <div class="feature bg-azul"><div class="icon">⏱️</div><h3>Tempo de tela</h3><p>Permite definir o tempo máximo de uso do celular em cada dia.</p></div>
+          <div class="feature bg-verde"><div class="icon">🌙</div><h3>Horário de descanso</h3><p>Ajuda a bloquear o aparelho em horários de sono, estudo ou aula.</p></div>
+          <div class="feature bg-amarelo"><div class="icon">📲</div><h3>Controle de apps</h3><p>Permite aprovar, bloquear ou revisar aplicativos instalados.</p></div>
+          <div class="feature bg-lilas"><div class="icon">🛡️</div><h3>Segurança digital</h3><p>Ajuda a configurar restrições de conteúdo e permissões da conta.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="combinados">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Diálogo familiar</div>
+          <h2>Combinados também fazem parte do cuidado</h2>
+          <p>O Family Link funciona melhor quando a família conversa sobre as regras.</p>
+        </div>
+
+        <div class="family-box">
+          <p>
+            A ferramenta ajuda no acompanhamento, mas o diálogo familiar continua sendo essencial.
+            Explique que os limites têm como objetivo proteger, organizar a rotina e favorecer
+            estudos, descanso e convivência.
+          </p>
+          <ul>
+            <li>Não usar o celular durante o horário escolar.</li>
+            <li>Não usar o celular durante tarefas e estudos.</li>
+            <li>Evitar o uso antes de dormir.</li>
+            <li>Pedir autorização antes de baixar novos aplicativos.</li>
+            <li>Respeitar os horários definidos pela família.</li>
+            <li>Conversar com o responsável caso encontre algo desconfortável na internet.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="faq">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Dúvidas frequentes</div>
+          <h2>Perguntas comuns dos responsáveis</h2>
+          <p>Use esta área para responder dúvidas rápidas sobre o Family Link.</p>
+        </div>
+
+        <div class="faq">
+          <details><summary>O Family Link funciona em todos os celulares?</summary><p>Ele funciona em dispositivos compatíveis, mas alguns recursos podem variar de acordo com o modelo do aparelho, versão do sistema e configurações da conta.</p></details>
+          <details><summary>Preciso criar um Gmail novo para meu filho?</summary><p>Depende. Se a criança for menor de 13 anos, ou menor que a idade mínima aplicável no país, o responsável poderá criar uma Conta Google infantil. Se a criança ou adolescente já tiver uma Conta Google, pode ser possível ativar a supervisão na conta existente.</p></details>
+          <details><summary>Posso deixar outras contas no celular da criança/adolescente?</summary><p>O ideal é que o aparelho fique apenas com a Conta Google supervisionada. Outras contas não supervisionadas podem permitir uso fora do controle parental.</p></details>
+          <details><summary>Remover a conta do celular apaga a conta do Google?</summary><p>Não necessariamente. Remover a conta do aparelho apenas retira o acesso daquela conta no celular. A conta continua existindo.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="sources" id="fontes">
+      <div class="container">
+        <div class="section-title">
+          <div class="eyebrow">Fontes consultadas</div>
+          <h2>Base do projeto</h2>
+          <p>Fontes institucionais e oficiais utilizadas para embasar o material.</p>
+        </div>
+
+        <ul class="sources-list">
+          <li>Lei nº 15.100/2025 — Planalto: <a href="https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15100.htm" target="_blank" rel="noopener">https://www.planalto.gov.br/ccivil_03/_ato2023-2026/2025/lei/l15100.htm</a></li>
+          <li>Ministério da Educação — Celulares nas escolas: <a href="https://www.gov.br/mec/pt-br/celular-escola" target="_blank" rel="noopener">https://www.gov.br/mec/pt-br/celular-escola</a></li>
+          <li>Guia Crianças, Adolescentes e Telas — Governo Federal: <a href="https://www.gov.br/secom/pt-br/assuntos/uso-de-telas-por-criancas-e-adolescentes/guia/guia-de-telas_sobre-usos-de-dispositivos-digitais_versaoweb.pdf" target="_blank" rel="noopener">https://www.gov.br/secom/pt-br/assuntos/uso-de-telas-por-criancas-e-adolescentes/guia/guia-de-telas_sobre-usos-de-dispositivos-digitais_versaoweb.pdf</a></li>
+          <li>Google Family Link — Página oficial: <a href="https://families.google/intl/pt-BR_ALL/familylink/" target="_blank" rel="noopener">https://families.google/intl/pt-BR_ALL/familylink/</a></li>
+          <li>ONU Brasil — Objetivos de Desenvolvimento Sustentável: <a href="https://brasil.un.org/pt-br/sdgs" target="_blank" rel="noopener">https://brasil.un.org/pt-br/sdgs</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <p>
+        Guia Digital para Uso Consciente do Smartphone •
+        Projeto acadêmico de extensão • ODS 4 — Educação de Qualidade • ODS 3 — Saúde e Bem-Estar
+      </p>
+    </footer>
+  </main>
+</body>
+</html>
